@@ -1,0 +1,86 @@
+
+-------User -------
+public class User {
+    private String id;
+    private String name;
+    private String email;
+    private String password;
+    private Set<String> roles;
+    private Address address;
+    private String phone;
+    private List<Order> orders;
+    private List<String> wishList;
+    private Cart cart;
+}
+
+----- Product---------
+public class Product {
+    private String id;
+    private String name;
+    private String description;
+    private BigDecimal price;
+    private String category;
+    private String brand;
+    private int stock;
+    private String imageUrl;
+    private Map<String, String> attributes;
+    private List<Rating> ratings;
+    private List<Review> reviews;
+    private Date createdAt;
+}
+--------Cart---------
+public class Cart {
+    private String id;
+    private String userId;
+    private List<CartItem> items;
+    private BigDecimal totalPrice;
+    private Date createdAt;
+}
+-----------cartItem----------
+public class CartItem {
+    private String productId;
+    private int quantity;
+    private BigDecimal price;
+}
+---------Order----------------
+public class Order {
+    private String id;
+    private String userId;
+    private List<OrderItem> items;
+    private BigDecimal totalPrice;
+    private Address shippingAddress;
+    private Address billingAddress;
+    private String status;
+    private String paymentMethod;
+    private Date createdAt;
+}
+---------Rating----------------
+public class Rating {
+    private String userId;
+    private String productId;
+    private int rating;
+    private Date createdAt;
+}
+----------Review----------------
+public class Review {
+    private String userId;
+    private String productId;
+    private String review;
+    private Date createdAt;
+}
+-----------Address-------------
+public class Address {
+    private String street;
+    private String city;
+    private String state;
+    private String postalCode;
+    private String country;
+}
+-----------Payment-------------
+public class Payment {
+    private String orderId;
+    private BigDecimal amount;
+    private String paymentMethod;
+    private String status;
+    private Date paymentDate;
+}
